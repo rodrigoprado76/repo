@@ -7,7 +7,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Configurações de segurança iniciais
 SECRET_KEY = 'django-insecure-642phuef97$38@8)!f@4!23&x)fnxm8ytb%@u!3m^e@=o#$9qc'
-DEBUG = False
+DEBUG = True
 ALLOWED_HOSTS = ['*']
 
 # Diretório para arquivos estáticos em produção
@@ -95,3 +95,4 @@ REST_FRAMEWORK = {
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     )
 }
+
