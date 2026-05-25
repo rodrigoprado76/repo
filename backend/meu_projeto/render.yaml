@@ -2,5 +2,7 @@ services:
   - type: web
     name: appserver
     runtime: python
+    # Força a Render a entrar na pasta correta antes de rodar os comandos
+    rootDir: backend/meu_projeto
     buildCommand: pip install -r requirements.txt
     startCommand: gunicorn meu_projeto.wsgi:application
