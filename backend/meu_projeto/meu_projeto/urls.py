@@ -30,6 +30,8 @@ urlpatterns = [
     path('api/teste/', endpoint_teste),
     
     # Rotas de Login e segurança JWT
+        # Adicione isso na lista urlpatterns para responder na página inicial pura
+    path('', endpoint_teste),
     path('api/login/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     
