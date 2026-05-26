@@ -15,11 +15,16 @@ function Dashboard() {
     // Pega o token de segurança salvo no momento do Login
     const token = localStorage.getItem('token_acesso');
 
+    // Identifica se usa Vite ou Create React App automaticamente
+    const apiUrl = import.meta.env?.VITE_API_URL || process.env?.REACT_APP_API_URL || 'https://appserver-8dn0.onrender.com';
+
     try {
-      const resposta = await axios.post('https://frontend-react-etcm.onrender.com/', 
+      // CORREÇÃO: Apontando para o backend oficial na rota /api/cadastro/
+      const resposta = await axios.post(`${apiUrl}/api/cadastro/`, 
         { nome: nome, email: email },
         { 
           headers: {
+            'Content-Type': 'application/json',
             // Envia o token no formato "Bearer" que o Django Rest Framework exige
             'Authorization': `Bearer ${token}` 
           }
