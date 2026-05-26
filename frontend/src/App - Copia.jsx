@@ -6,7 +6,7 @@ function App() {
 
   useEffect(() => {
     // Faz a requisição para a API do Django
-        axios.get('https://appserver-8dn0.onrender.com/api/teste/')
+    axios.get('http://localhost:8000/api/teste/')
       .then(response => {
         // Guarda a mensagem recebida no estado do React
         setTexto(response.data.mensagem)
