@@ -4,7 +4,7 @@ from django.http import JsonResponse
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
-from meu_projeto.core.models import Cliente
+from core.models import Cliente
 
 # 1. Endpoint de teste simples (Liberado para testar conexão)
 def endpoint_teste(request):
